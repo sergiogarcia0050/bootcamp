@@ -45,7 +45,11 @@ INSTALLED_APPS = [
 	'rest_framework',
 	'people',
 	'courses',
+<<<<<<< Updated upstream
     'events'
+=======
+	'knowledge_suppliers',
+>>>>>>> Stashed changes
 ]
 
 MIDDLEWARE = [
