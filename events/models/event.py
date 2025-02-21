@@ -1,6 +1,7 @@
 from django.db import models
-from courses.models import course
-from courses.models import batch
+
+from courses.models.batch import Batch
+from courses.models.course import Course
 class Event(models.Model):
     id = models.UUIDField(primary_key=True)
     name = models.CharField(max_length=100)
@@ -8,8 +9,8 @@ class Event(models.Model):
     type = models.Choices('I', 'P', 'F') # I = Inicial, P = Progreso, F = Finalizacion
     start_date = models.DateField()
     end_date = models.DateField()
-    course = models.ForeignKey(course, null=True, on_delete=models.PROTECT)
-    batch = models.ForeignKey(batch, null=True, on_delete=models.PROTECT)
+    course = models.ForeignKey(Course, null=True, on_delete=models.PROTECT)
+    batch = models.ForeignKey(Batch, null=True, on_delete=models.PROTECT)
 
     class Meta:
         db_table = 'events'
