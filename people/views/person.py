@@ -8,6 +8,6 @@ class PersonSerializar(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class CourseViewSet(viewsets.ModelViewSet):
+class PersonViewSet(viewsets.ModelViewSet):
     queryset = Person.objects.all()
     serializer_class = PersonSerializar
