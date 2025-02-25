@@ -1,17 +1,17 @@
 
 from rest_framework import serializers
-from knowledge_suppliers.models import knowledgeSupplier
+from knowledge_suppliers.models import knowledge_supplier
 from rest_framework import viewsets
 
 class kowledSupplierSerializer(serializers.ModelSerializer):
 
 	class Meta:
-			model = knowledgeSupplier
+			model = knowledge_supplier.KnowledgeSupplier
 			fields = "__all__"
 
 
 class KnowledgeSpplierViewSet(viewsets.ModelViewSet):
-    queryset = knowledgeSupplier.objects.all()
+    queryset = knowledge_supplier.KnowledgeSupplier.objects.all()
     serializer_class = kowledSupplierSerializer
 
 

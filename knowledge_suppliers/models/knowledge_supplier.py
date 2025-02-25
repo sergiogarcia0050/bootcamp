@@ -3,7 +3,7 @@ from django.db import models
 
 from courses.models.course import Course
 
-class KnowledgeSupplier(models.Models):
+class KnowledgeSupplier(models.Model):
 	id = models.UUIDField(primary_key = True, default=uuid.uuid4)
 	name = models.TextField(max_length = 100, unique = True)
 	addres = models.TextField(max_length = 100)

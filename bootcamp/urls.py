@@ -18,9 +18,13 @@ from django.contrib import admin
 from django.urls import include, path
 from courses import urls as courses_urls
 from events import urls as events_urls
+from people import urls as person
+from knowledge_suppliers import urls as knowledge
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('courses/', include(courses_urls)),
-    path('events/', include(events_urls))
+    path('events/', include(events_urls)),
+    path('people/', include(person)),
+    path('knowledge_suppliers/', include(knowledge))
 ]
