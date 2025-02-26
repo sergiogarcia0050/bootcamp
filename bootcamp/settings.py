@@ -159,5 +159,5 @@ SIMPLE_JWT = {
 }
 
 
-AUTH_USER_MODEL = "people.Person"}
+AUTH_USER_MODEL = "people.Person"
 
