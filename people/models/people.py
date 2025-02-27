@@ -6,17 +6,24 @@ from django.contrib.auth.hashers import make_password
 class PersonUserManager(BaseUserManager):
 	def create_user(self, email, name, password=None, **extra_fields):
 		if(not email):
-
 			raise ValueError('Es necesario un correo para registarse')
+		
 		email = self.normalize_email(email)
 		name = extra_fields.get("name", name)
 		extra_fields.setdefault('is_active', True)
+
 		user = self.model(email = email, name = name , **extra_fields)
-		#Borrar este commit
-		user.set_password(password)
+
+		if password:
+			user.set_password(password)
+		else:
+			user.set_unusable_password()
+
 		user.save(using = self._db)
-		user.is_active = True
 		return user
+		
+
+	
 	def create_superuser(self, email, name, password=None, **extra_fields):
 			extra_fields.setdefault('is_staff', True)
 			extra_fields.setdefault('is_superuser', True)
