@@ -11,7 +11,7 @@ class PersonUserManager(BaseUserManager):
 		email = self.normalize_email(email)
 		name = extra_fields.get("name", name)
 		user = self.model(email = email, name = name , **extra_fields)
-		user.set_password(make_password(password))
+		user.set_password(password)
 		user.save(using = self._db)
 		user.is_active = True
 		return user

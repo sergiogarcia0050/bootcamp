@@ -155,7 +155,7 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': False,
     'ALGORITHM': 'HS256',
-    'SIGNING_KEY': 'your-secret-key',  # Asegúrate de tener una clave secreta
+    'SIGNING_KEY': 'your-secret-key',
 }
 
 
