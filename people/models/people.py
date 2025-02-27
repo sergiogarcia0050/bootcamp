@@ -11,6 +11,7 @@ class PersonUserManager(BaseUserManager):
 		email = self.normalize_email(email)
 		name = extra_fields.get("name", name)
 		user = self.model(email = email, name = name , **extra_fields)
+		#Borrar este commit
 		user.set_password(password)
 		user.save(using = self._db)
 		user.is_active = True
