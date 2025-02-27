@@ -10,6 +10,7 @@ class PersonUserManager(BaseUserManager):
 			raise ValueError('Es necesario un correo para registarse')
 		email = self.normalize_email(email)
 		name = extra_fields.get("name", name)
+		extra_fields.setdefault('is_active', True)
 		user = self.model(email = email, name = name , **extra_fields)
 		#Borrar este commit
 		user.set_password(password)
@@ -44,4 +45,5 @@ class Person(AbstractUser):
 	username = None
 	last_name = None
 	first_name = None
+
 
