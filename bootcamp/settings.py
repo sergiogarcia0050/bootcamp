@@ -48,7 +48,8 @@ INSTALLED_APPS = [
 	'courses',
     'events',
     'knowledge_suppliers',
-    'rest_framework_simplejwt'
+    'rest_framework_simplejwt',
+    'front'
 ]
 
 MIDDLEWARE = [
@@ -66,7 +67,7 @@ ROOT_URLCONF = 'bootcamp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "react"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,10 +75,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
 ]
+
+
+# STATICFILES_DIRS = ( os.path.join(BASE_DIR,'static/'),)
 
 WSGI_APPLICATION = 'bootcamp.wsgi.application'
 

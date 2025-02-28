@@ -24,11 +24,12 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
-
+from front import urls as login
 from people.views.person import CustomTokenObtainPairView
 
 
 urlpatterns = [
+    path('', include(login)),
     path('admin/', admin.site.urls),
     path('courses/', include(courses_urls)),
     path('events/', include(events_urls)),
