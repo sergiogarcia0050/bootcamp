@@ -29,8 +29,7 @@ class PersonSerializer(serializers.ModelSerializer):
         user = Person.objects.create_user(
             email=email,
             name=name,
-            password=password,
-            **validated_data
+            password=password
         )
 
         if groups is not None:

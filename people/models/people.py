@@ -23,13 +23,6 @@ class PersonUserManager(BaseUserManager):
 		return user
 		
 
-	
-	def create_superuser(self, email, name, password=None, **extra_fields):
-			extra_fields.setdefault('is_staff', True)
-			extra_fields.setdefault('is_superuser', True)
-			return self.create_user(email, name, password, **extra_fields)
-	
-
 class Person(AbstractUser):
 	id = models.UUIDField(primary_key=True, editable=False, default=uuid.uuid4)
 	name = models.CharField(max_length=100)
